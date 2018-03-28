@@ -15,9 +15,8 @@
 		{
 			$this->load->library('form_validation');
 
-			//$this->form_validation->set_rules('username', 'User Name','required|alpha|is_unique[users.user_name]');
-			$this->form_validation->set_rules('username', 'User Name','required|alpha');
-			$this->form_validation->set_rules('password', 'Password','required');
+		//	$this->form_validation->set_rules('username', 'User Name','required|alpha');
+		//	$this->form_validation->set_rules('password', 'Password','required');
 			$this->form_validation->set_error_delimiters("<p class='text-danger'>","</p>");
 
 			if($this->form_validation->run('admin_login') ){

@@ -26,16 +26,28 @@
 				<td>Title</td>
 				<td>Action</td>
 			</tr>
-			<?php if( count($blogs) ): ?>
-				<?php	foreach($blogs as $blog): ?>
+			<?php if( count($blogs) ): 
+				$count = $this->uri->segment(3, 0);
+					foreach($blogs as $blog): ?>
 					<tr>
-						<td>1</td>
+						<td><?= ++$count ?></td>
 						<td>
 							<?= $blog->title ?>
 						</td>
 						<td>
-							<a href="" class="btn btn-primary">Edit</a>
-							<a href="" class="btn btn-danger">Delete</a>
+							<div class="row">
+								<div class="col-lg-5">
+									<?= anchor("admin/edit_blog/{$blog->id}",'Edit',['class'=>'btn btn-primary']); ?>
+								</div>
+								<div class="col-lg-5">
+									<?=
+								form_open('admin/delete_blog'),
+								form_hidden('blog_id', $blog->id),
+								form_submit(['name'=>'submit','value'=>'Delete','class'=>'btn btn-danger']),
+								form_close();
+							?>
+								</div>
+							</div>
 						</td>
 					</tr>
 				<?php endforeach; ?>
@@ -45,6 +57,7 @@
 				</tr>
 				<?php endif; ?>
 		</table>
+		<?= $this->pagination->create_links(); ?>
 	</div>
 </div>
 

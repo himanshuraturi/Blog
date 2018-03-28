@@ -16,21 +16,20 @@
   <div class="collapse navbar-collapse" id="navbarColor01">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+         <?= anchor('/', 'Home') ?>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Sign up</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Login</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">About</a>
+        <?= anchor('login', 'Login') ?>
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="text" placeholder="Search">
+    <?= form_open('user/search', ['class'=>'form-inline my-2 my-lg-0','role'=>'serach']); ?>
+    <!--<form class="form-inline my-2 my-lg-0"> -->
+      <input class="form-control mr-sm-2" name="query" type="text" placeholder="Search">
       <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-    </form>
+   <?= form_close(); ?>
+   <?= form_error('query',"<p class='navbar-text text-danger'>",'</p>'); ?>
   </div>
 </nav>

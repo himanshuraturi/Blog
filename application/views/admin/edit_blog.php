@@ -1,15 +1,15 @@
 <?php include_once('admin_header.php'); ?>
 
 <div class="container">
-	<?php echo form_open('admin/store_blog', ['class'=>'form-horizontal']); ?>
-	<?php echo form_hidden('user_id',$this->session->userdata('user_id')); ?>
+	<?php echo form_open("admin/update_blog/{$blog->id}", ['class'=>'form-horizontal']); ?>
+
  	 <fieldset>
-    	<legend>Add Blog</legend>
+    	<legend>Edit Blog</legend>
 
     	<div class="form-group row">
     		  <label for="staticEmail" class="col-sm-2 col-form-label">Title</label>
       		  <div class="col-sm-10">
-      		  <?php echo form_input(['name'=>'title', 'class'=>'form-control', 'placeholder'=>'title', 'value'=>set_value('title')]); ?>
+      		  <?php echo form_input(['name'=>'title', 'class'=>'form-control', 'placeholder'=>'title', 'value'=>set_value('title', $blog->title)]); ?>
         		<!--<input type="text"  class="form-control" id="staticEmail" value="email@example.com"> -->
      		 </div>
         
@@ -17,7 +17,7 @@
     	<div class="form-group row">
     	 	 <label for="exampleInputPassword1" class="col-sm-2 col-form-label">Blog Body</label>
      	  	<div class="col-sm-10">
-     	  		<?php echo form_textarea(['name'=>'body', 'class'=>'form-control', 'placeholder'=>'body', 'value'=>set_value('body')]); ?>
+     	  		<?php echo form_textarea(['name'=>'body', 'class'=>'form-control', 'placeholder'=>'body', 'value'=>set_value('body', $blog->body)]); ?>
      			<!--- <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"> -->
       	 	 </div>
            

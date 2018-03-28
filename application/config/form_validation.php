@@ -6,12 +6,12 @@ $config = [
 											[
 													'field'=> 'title',
 													'label'=> 'Title',
-													'rules'=> 'required|alphadash'
+													'rules'=> 'required'
 											],
 											[
 													'field'=> 'body',
 													'label'=> 'Blog Body',
-													'rules'=> 'required',
+													'rules'=> 'required'
 											]
 								],
 
@@ -19,12 +19,12 @@ $config = [
 											[
 												'field'=>'username',
 												'label'=>'User Name',
-												'rules'=>'required|alpha',
+												'rules'=>'required|alpha'
 											],
 											[
 												'field'=>'password',
 												'label'=>'Password',
-												'rules'=>'required',
+												'rules'=>'required'
 											]
 							]
 ];
